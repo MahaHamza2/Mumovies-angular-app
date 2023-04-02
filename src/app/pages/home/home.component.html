@@ -1,0 +1,33 @@
+<app-slider [items]="upComing"></app-slider>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="my-5 text-center">
+        <hr />
+        Popular Movies
+        <hr />
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-lg-2 col-sm-4 mt-2" *ngFor="let pop of popular">
+      <app-card [item]="pop"></app-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="my-5 text-center">
+        <hr />
+        Popular Tv Shows
+        <hr />
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-lg-2 col-sm-4 mt-2" *ngFor="let pop of popularTv">
+      <app-card [item]="pop"></app-card>
+    </div>
+  </div>
+</div>

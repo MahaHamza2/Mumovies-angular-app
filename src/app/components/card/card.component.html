@@ -1,0 +1,64 @@
+<div class="card h-100">
+  <div class="position-relative">
+    <a *ngIf="item.title" [routerLink]="['/details', item.id]">
+      <img
+        class="card-img-top"
+        *ngIf="item.poster_path != null"
+        [src]="'https://image.tmdb.org/t/p/original' + item?.poster_path"
+        [alt]="item.poster_path"
+      />
+      <img
+        class="card-img-top"
+        *ngIf="item.poster_path == null"
+        [src]="defaultImage"
+        [alt]="item.poster_path"
+      />
+      <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h4 class="card-title">{{ item?.original_title }}</h4>
+        <p class="card-text">
+          <span
+            class="badge"
+            [ngClass]="
+              item?.vote_average >= 8
+                ? 'bg-success'
+                : item?.vote_average >= 5
+                ? 'bg-primary'
+                : 'bg-danger'
+            "
+            >{{ item?.vote_average }}</span
+          >
+        </p>
+      </div>
+    </a>
+    <a *ngIf="!item.title" [routerLink]="['/tvshow', item.id]">
+      <img
+        class="card-img-top"
+        *ngIf="item.poster_path != null"
+        [src]="'https://image.tmdb.org/t/p/original' + item?.poster_path"
+        [alt]="item.poster_path"
+      />
+      <img
+        class="card-img-top fit-image"
+        *ngIf="item.poster_path == null"
+        [src]="defaultImage"
+        [alt]="item.poster_path"
+      />
+      <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h4 class="card-title">{{ item?.name }}</h4>
+        <p class="card-text">
+          <span
+            class="badge"
+            [ngClass]="
+              item?.vote_average >= 8
+                ? 'bg-success'
+                : item?.vote_average >= 5
+                ? 'bg-primary'
+                : 'bg-danger'
+            "
+            >{{ item?.vote_average }}</span
+          >
+        </p>
+      </div>
+    </a>
+  </div>
+</div>

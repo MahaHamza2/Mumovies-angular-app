@@ -1,0 +1,18 @@
+<div class="card mt-2" style="width: 18rem" *ngFor="let ep of episodes">
+  <img
+    class="card-img-top"
+    [src]="'https://image.tmdb.org/t/p/original' + ep?.still_path"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <p class="card-text">
+      <span class="badge bg-secondary">Episode</span>: {{ ep?.episode_number }}
+    </p>
+    <p class="card-text">
+      <span class="badge bg-secondary">Name Episode</span>: {{ ep?.name }}
+    </p>
+    <p class="card-text">
+      <span class="badge bg-secondary">Desc</span>: {{ ep?.overview }}
+    </p>
+  </div>
+</div>

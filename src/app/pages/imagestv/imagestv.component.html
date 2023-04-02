@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h2>Tv shows images</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2" *ngFor="let image of imagesTv">
+    <div class="card">
+      <img
+        class="card-img-top"
+        [src]="'https://image.tmdb.org/t/p/original' + image?.file_path"
+        [alt]="image.Title"
+      />
+      <div class="card-body"></div>
+    </div>
+  </div>
+</div>

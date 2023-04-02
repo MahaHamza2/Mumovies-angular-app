@@ -1,0 +1,45 @@
+<div
+  id="carouselExampleCaptions"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      [ngClass]="{ active: f }"
+      data-bs-interval="5000"
+      *ngFor="let tv of tvshows; let f = first"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/original' + tv?.backdrop_path"
+        class="d-block w-100"
+        [alt]="tv.image"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ tv?.original_name }}</h5>
+        <p>{{ tv?.overview }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-2">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="my-5 text-center">Popular TV</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-lg-2 col-sm-4 mt-2" *ngFor="let pop of popular">
+        <app-card [item]="pop"></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <p-paginator
+    (onPageChange)="paginate($event)"
+    [rows]="20"
+    [totalRecords]="totalResults"
+    #pg
+  ></p-paginator>
+</div>

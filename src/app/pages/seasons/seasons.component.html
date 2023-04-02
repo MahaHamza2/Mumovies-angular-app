@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-md-2 mt-2" *ngFor="let seas of seasons; let i = index">
+    <div class="card">
+      <a
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+        (click)="getEpisodes(i)"
+      >
+        <img
+          class="card-img-top"
+          [src]="'https://image.tmdb.org/t/p/original' + seas?.poster_path"
+          [alt]="seas.season"
+        />
+      </a>
+      <div class="card-body">
+        <h4 class="card-title">{{ seas?.name }}</h4>
+        <p class="card-text">Date {{ seas?.air_date }}</p>
+        <p class="card-text">Episodes: {{ seas?.episode_count }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Episodes</h5>
+      <button
+        type="button"
+        class="btn-close text-reset"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <app-episodes [episodes]="episodes"></app-episodes>
+    </div>
+  </div>
+</div>
+
+<!-- Scrollable modal -->
+<!-- Button trigger modal -->
+<!-- <button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#staticBackdrop"
+>
+  Launch static backdrop modal
+</button> -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">episodes</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <app-episodes [episodes]="episodes"></app-episodes>
+      </div>
+    </div>
+  </div>
+</div>

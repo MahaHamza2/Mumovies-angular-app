@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-md-3 text-center my-3">
+    Vote: <span class="badge bg-success">{{ showMovie?.vote_count }}</span>
+  </div>
+  <div class="col-md-3 text-center my-3">
+    Vote Average:
+    <span class="badge bg-success">{{ showMovie?.vote_average }}</span>
+  </div>
+  <div class="col-md-3 text-center my-3">
+    Status: <span class="badge bg-success">{{ showMovie?.status }}</span>
+  </div>
+  <div class="col-md-3 text-center my-3">
+    release_date:
+    <span class="badge bg-success">{{ showMovie?.release_date }}</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <app-slider [items]="[showMovie]"></app-slider>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-md-4 mx-auto">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active bg-success"
+          routerLink="similar"
+          >Similar</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active bg-success"
+          routerLink="actors"
+          >Actors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active bg-success"
+          routerLink="images"
+          >Images</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active bg-success"
+          routerLink="videos"
+          >videos</a
+        >
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="similar"
+          >Similar</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="actors"
+          >Actors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="images"
+          >Images</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="videos"
+          >Videos</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

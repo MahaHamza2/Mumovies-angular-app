@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h2>Videos of the Movies</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 mt-2" *ngFor="let vedeo of vedeos">
+    <iframe
+      [src]="getVedeo('https://youtube.com/embed/' + vedeo?.key)"
+      [title]="vedeo?.name"
+      frameborder="1"
+    ></iframe>
+  </div>
+</div>

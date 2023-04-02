@@ -1,0 +1,95 @@
+<div class="row">
+  <div class="col-md-2 text-center my-3">
+    Name: <span class="badge bg-success">{{ showstv?.original_name }}</span>
+  </div>
+  <div class="col-md-2 text-center my-3">
+    language:
+    <span class="badge bg-success">{{ showstv?.original_language }}</span>
+  </div>
+  <div class="col-md-2 text-center my-3">
+    Vote: <span class="badge bg-success">{{ showstv?.vote_average }}</span>
+  </div>
+  <div class="col-md-2 text-center my-3">
+    Episode Time:
+    <span class="badge bg-success">{{ showstv?.episode_run_time }}</span>
+  </div>
+  <div class="col-md-2 text-center my-3">
+    Status: <span class="badge bg-success">{{ showstv?.status }}</span>
+  </div>
+  <div class="col-md-2 text-center my-3">
+    first_date:
+    <span class="badge bg-success">{{ showstv?.first_air_date }}</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <app-slider [items]="[showstv]"></app-slider>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-md-6 mx-auto">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="seasons"
+          >Seasons</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="similartv"
+          >Similar</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="actorstv"
+          >Actors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="imagestv"
+          >Images</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="videostv"
+          >videos</a
+        >
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="seasons"
+          >Seasons</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="similartv"
+          >Similar</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="actorstv"
+          >Actors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="imagestv"
+          >Images</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="videostv"
+          >Videos</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

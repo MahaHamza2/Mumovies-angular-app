@@ -1,0 +1,47 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-4 mt-2">
+    <div class="input-group rounded">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search a movies"
+        (change)="serch()"
+        [(ngModel)]="search"
+      />
+      <!-- <button class="btn btn-primary"  id="search-addon" >
+            <i class="fa fa-search"></i>
+          </button> -->
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col-md-2 mt-2" *ngFor="let movie of movies">
+    <app-card [item]="movie"></app-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <p-paginator
+      *ngIf="movies.length != 0"
+      (onPageChange)="paginate($event)"
+      [rows]="20"
+      [totalRecords]="totalResults"
+      #pg
+    ></p-paginator>
+  </div>
+  <div
+    class="text-center"
+    style="font-size: 20px; color: blue"
+    *ngIf="movies.length == 0"
+  >
+    <div class="d-flex align-items-center justify-content-center vh-100">
+      <div class="text-center">
+        <h1 class="display-1 fw-bold">
+          <span class="text-danger">Movies Not Found</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
